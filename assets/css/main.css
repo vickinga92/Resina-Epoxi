@@ -569,3 +569,76 @@ nav{display:flex; gap:14px; align-items:center}
         text-align: left;
     }
 }
+
+/* --- MODIFICACIONES EN TUS ESTILOS EXISTENTES --- */
+
+/* 1. Ajuste del Contenedor Principal y Header en móvil */
+@media(max-width: 768px) { 
+    /* El padding del main debe ser más ajustado en móvil */
+    main { 
+        padding: 15px; 
+    }
+    /* El header también debe tener padding reducido */
+    header {
+        padding: 15px 10px;
+    }
+}
+
+/* 2. Solución para .hero y .grid-2 (que se vean al 100% y se apilen) */
+/* Este media query (980px) ya lo tienes, pero lo ajusto para incluir el .grid-2 */
+@media(max-width: 980px){ 
+    /* .hero: Ya lo tienes. Pasa de 2 columnas a 1 columna. */
+    .hero{
+        grid-template-columns: 1fr;
+        gap: 20px; /* Reducir el espacio en móvil */
+    }
+    /* .grid-2: Pasa de 2 columnas a 1 columna (el artículo + el aside se apilan). */
+    .grid-2{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 3. Solución para el Sticky CTA (Aside) en móvil */
+/* Debe dejar de ser 'sticky' en pantallas pequeñas para que no oculte contenido. */
+@media (max-width: 980px) {
+    .sticky-cta {
+        position: relative; /* Cambia a posición normal */
+        top: 0;
+        margin-top: 20px; /* Añade un margen superior después del artículo principal */
+    }
+}
+
+
+/* --- CÓDIGO AÑADIDO PARA CUMPLIR CON LAS CUADRÍCULAS ESPECÍFICAS --- */
+
+/* 4. Solución para .articles-big-grid (Artículos relacionados: 2 cajas de 2 en 2) */
+/* El requisito es 2 cajas por fila. Ya tenías un media query para 980px, pero lo ajusto. */
+@media(max-width: 980px) {
+    .articles-big-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+    }
+}
+
+/* 5. Solución para .affiliate-section / .product-grid (Productos de afiliación: 2 cajas de 2 en 2) */
+/* Tu CSS actual ya tiene el ajuste para 1100px. Lo ajusto ligeramente: */
+@media(max-width: 980px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para tabletas (980px) */
+    }
+}
+
+/* 6. Ajuste Final para MÓVILES EXTREMOS (< 600px) */
+@media(max-width: 600px) {
+    /* Las cuadrículas de 2 columnas deben pasar a 1 columna completa en móvil. */
+    .articles-big-grid,
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 columna completa en móvil */
+    }
+}
+
+/* Opcional: Ajustar la lista de beneficios que pasa de 2 a 1 columna */
+@media (max-width: 520px) {
+    ul.beneficios{
+        grid-template-columns: 1fr;
+    }
+}
