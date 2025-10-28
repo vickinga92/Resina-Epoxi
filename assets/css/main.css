@@ -1,263 +1,466 @@
-:root{
-  /* Nuevos colores pastel y de acento */
-   --bg:#ffffff;        /* Fondo principal (azul claro muy suave) */
-  --card:#e0e7ed;      /* Fondo de tarjetas (gris azulado más claro) */
-  --accent:#ff6f61;    /* Color de acento vibrante (coral / salmón) */
-  --muted:#474c55;     /* Texto secundario (gris medio) */
-  --glass: rgba(255,255,255,0.4); /* Efecto cristal para elementos sutiles */
-  --maxw:1100px; 
-  --radius:14px;
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+:root {
+    /* Nuevos colores pastel y de acento */
+    --bg: #ffffff; /* Fondo principal (azul claro muy suave) */
+    --card: #e0e7ed; /* Fondo de tarjetas (gris azulado más claro) */
+    --accent: #ff6f61; /* Color de acento vibrante (coral / salmón) */
+    --muted: #474c55; /* Texto secundario (gris medio) */
+    --glass: rgba(255, 255, 255, 0.4); /* Efecto cristal para elementos sutiles */
+    --maxw: 1100px;
+    --radius: 14px;
+    --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:var(--font-sans);
-  background-color: var(--bg);
-  color:#374151; /* Texto principal más oscuro para buen contraste */
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.4;
+* {
+    box-sizing: border-box;
 }
-header{padding:28px 20px; display:flex; align-items:center; justify-content:space-between; max-width:var(--maxw); margin:0 auto;}
-.logo{display:flex; gap:12px; align-items:center; text-decoration:none; color:inherit}
-.logo img{height:44px; width:44px; border-radius:10px; object-fit:cover}
-.logo h1{font-size:18px; margin:0}
-nav{display:flex; gap:14px; align-items:center}
-nav a{color:var(--muted); text-decoration:none; font-size:14px; transition: color 0.3s ease;} /* Añadido para suavizar el hover */
-nav a:hover {color: var(--accent);} /* Efecto hover */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: #374151; /* Texto principal más oscuro para buen contraste */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.4;
+}
+
+header {
+    padding: 28px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--maxw);
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img {
+    height: 44px;
+    width: 44px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.logo h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
 
 /* Botón de acento superior, ahora más vibrante */
-.cta-top{
-  background:linear-gradient(90deg,var(--accent),#ff8c82); /* Degradado más cálido */
-  color:#ffffff; /* Texto blanco para contraste */
-  padding:10px 14px; 
-  border-radius:10px; 
-  text-decoration:none; 
-  font-weight:700;
-  box-shadow: 0 4px 12px rgba(255,111,97,0.3); /* Sombra sutil para "levantar" el botón */
-  transition: all 0.3s ease;
+.cta-top {
+    background: linear-gradient(90deg, var(--accent), #ff8c82); /* Degradado más cálido */
+    color: #ffffff; /* Texto blanco para contraste */
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.3); /* Sombra sutil para "levantar" el botón */
+    transition: all 0.3s ease;
 }
+
 .cta-top:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,111,97,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 111, 97, 0.4);
 }
 
-main{max-width:var(--maxw); margin:0 auto; padding:20px;}
-.hero{
-  display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:center; margin-top:12px;
+main {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 20px;
 }
 
-@media(max-width:980px){ .hero{grid-template-columns:1fr;}}
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 28px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+@media (max-width: 980px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Hero Left - ahora con un fondo más claro y sombra más suave */
-.hero-left{
-  padding:28px; 
-  background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6)); /* Fondo más claro y transparente */
-  border-radius:var(--radius); 
-  box-shadow:0 6px 30px rgba(0,0,0,0.1); /* Sombra más suave */
-  border: 1px solid rgba(255,255,255,0.7); /* Borde sutil */
+.hero-left {
+    padding: 28px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)); /* Fondo más claro y transparente */
+    border-radius: var(--radius);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    border: 1px solid rgba(255, 255, 255, 0.7); /* Borde sutil */
 }
+
 .hero-left img {
-    width: 40%; /* Asegura que la imagen sea responsiva y se encoja en móviles */
+    width: 40%;
     height: auto;
     display: block;
-    
-    /* 2. Centra la imagen horizontalmente */
-    margin: 15px auto 20px auto; 
-    
-    /* 3. Estilo */
-    border-radius: 12px; /* Un radio de borde más grande puede mejorar la estética */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Añade una sombra sutil para "levantarla" */
+    margin: 15px auto 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-.kicker{
-  display:inline-block; 
-  background:var(--glass); 
-  color:var(--accent); 
-  padding:6px 10px; 
-  border-radius:999px; 
-  font-weight:600; 
-  margin-bottom:12px; 
-  font-size:13px;
-  border: 1px solid rgba(255,111,97,0.2); /* Borde acentuado */
+
+.kicker {
+    display: inline-block;
+    background: var(--glass);
+    color: var(--accent);
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 13px;
+    border: 1px solid rgba(255, 111, 97, 0.2);
 }
-h2{font-size:28px; margin:0 0 10px; color:#374151;} /* Color de texto para el título */
-p.lead{color:var(--muted); margin-top:6px}
-ul.beneficios{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:18px 0 22px; padding:0; list-style:none;}
-ul.beneficios li{
-  background:rgba(255,255,255,0.7); /* Fondo más claro */
-  padding:10px; 
-  border-radius:10px; 
-  font-size:14px;
-  color: #555; /* Color de texto para la lista */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+h2 {
+    font-size: 28px;
+    margin: 0 0 10px;
+    color: #374151;
 }
-.hero-cta{display:flex; gap:10px; align-items:center}
-.btn{display:inline-block; padding:12px 16px; border-radius:12px; font-weight:700; text-decoration:none; transition: all 0.3s ease;}
-.btn-primary{
-  background:var(--accent); 
-  color:#ffffff; /* Texto blanco */
-  box-shadow: 0 4px 12px rgba(255,111,97,0.3);
+
+p.lead {
+    color: var(--muted);
+    margin-top: 6px;
 }
+
+ul.beneficios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 18px 0 22px;
+    padding: 0;
+    list-style: none;
+}
+
+ul.beneficios li {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hero-cta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.3);
+}
+
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,111,97,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 111, 97, 0.4);
 }
-.btn-ghost{
-  background:transparent; 
-  color:var(--muted); 
-  border:1px solid rgba(0,0,0,0.1); /* Borde más visible */
+
+.btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .btn-ghost:hover {
-  background: rgba(0,0,0,0.05);
-  color: var(--accent);
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--accent);
 }
 
 /* Hero Right - Fondo más suave y armónico */
-.hero-right{
-  background:linear-gradient(180deg,#fefefe 0%, #fefefe 100%); /* Fondo blanco para destacar */
-  padding:18px; 
-  border-radius:12px; 
-  box-shadow:0 10px 40px rgba(0,0,0,0.15); /* Sombra más pronunciada */
-  border: 1px solid rgba(0,0,0,0.05);
+.hero-right {
+    background: linear-gradient(180deg, #fefefe 0%, #fefefe 100%);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
-.offer{font-size:13px; color:var(--muted); margin-bottom:10px}
-.price{font-size:28px; font-weight:800; color:#374151; margin:0} /* Texto más oscuro */
-.badge{
-  display:inline-block; 
-  padding:6px 8px; 
-  background:rgba(0,0,0,0.05); /* Fondo sutil */
-  border-radius:10px; 
-  font-size:13px; 
-  margin-top:10px; 
-  color:var(--muted);
+
+.offer {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 10px;
 }
-.features{margin-top:16px; display:flex; gap:10px; flex-direction:column}
-.feature{
-  background:rgba(0,0,0,0.03); /* Fondo sutil */
-  padding:10px; 
-  border-radius:10px; 
-  font-size:14px;
-  color: #555;
+
+.price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #374151;
+    margin: 0;
 }
-.testimonials{margin-top:24px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
-@media(max-width:980px){ .testimonials{grid-template-columns:repeat(1,1fr)} }
+
+.badge {
+    display: inline-block;
+    padding: 6px 8px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    font-size: 13px;
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.features {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.feature {
+    background: rgba(0, 0, 0, 0.03);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.testimonials {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+@media (max-width: 980px) {
+    .testimonials {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
 /* Card - Fondo más claro y sombra suave */
-.card{
-  background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); 
-  padding:16px; 
-
-
-  
-  border-radius:12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
-  border: 1px solid rgba(0,0,0,0.05);
-  color: #444; /* Texto un poco más oscuro */
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: #444;
 }
-.meta{font-size:13px; color:var(--muted)}
-section.articles{margin-top:26px; display:grid; gap:20px}
+
+.meta {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+section.articles {
+    margin-top: 26px;
+    display: grid;
+    gap: 20px;
+}
 
 /* Blog Article - Fondo más claro */
-article.blog{
-  background:var(--card); 
-  padding:18px; 
-  border-radius:12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* Sombra suave */
-  border: 1px solid rgba(0,0,0,0.05);
-  color: #444;
+article.blog {
+    background: var(--card);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: #444;
 }
-article.blog h3{margin-top:0; color: #000000 ;}
-article.blog p {color: #000000;} /* Color de párrafo para legibilidad */
 
-article.blog img{
-    width: 100%; /* Asegura que la imagen sea responsiva y se encoja en móviles */
+article.blog h3 {
+    margin-top: 0;
+    color: #000000;
+}
+
+article.blog p {
+    color: #000000;
+}
+
+article.blog img {
+    width: 100%;
     height: auto;
     display: block;
-    
-    /* 2. Centra la imagen horizontalmente */
-    margin: 15px auto 20px auto; 
-    
-    /* 3. Estilo */
-    border-radius: 12px; /* Un radio de borde más grande puede mejorar la estética */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Añade una sombra sutil para "levantarla" */
+    margin: 15px auto 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.grid-2{display:grid; grid-template-columns:1fr 360px; gap:20px}
-@media(max-width:980px){ .grid-2{grid-template-columns:1fr} }
-aside{position:relative}
-
-/* Sticky CTA - Fondo que destaca con la paleta pastel */
-.sticky-cta{
-  position:sticky; 
-  top:24px; 
-  border-radius:12px; 
-  padding:16px; 
-  background:linear-gradient(180deg,#fff8e1,#ffe0b2); /* Tonos cálidos y suaves */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Sombra más intensa */
-  border: 1px solid rgba(0,0,0,0.08);
-  color: #374151;
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
 }
+
+@media (max-width: 980px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ASIDE - Estilos de Escritorio (Solo para el contenedor) */
+aside {
+    position: relative; /* Deja que el contenedor fluya normalmente */
+}
+
+
+/* Sticky CTA - Estilos de Escritorio (Aquí definimos el Sticky) */
+.sticky-cta {
+    position: sticky; /* ESTA es la posición de ESCRITORIO */
+    top: 24px; /* Posición de pegado */
+    border-radius: 12px;
+    padding: 16px;
+    background: linear-gradient(180deg, #fff8e1, #ffe0b2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #374151;
+}
+
 .sticky-cta .btn-primary {
-  background:var(--accent); 
-  color:#ffffff;
-  box-shadow: 0 4px 12px rgba(255,111,97,0.3);
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 111, 97, 0.3);
 }
+
 .sticky-cta .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255,111,97,0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 111, 97, 0.4);
 }
 
 
-footer{max-width:var(--maxw); margin:34px auto; padding:18px; color:var(--muted); font-size:14px}
-.faq summary{cursor:pointer; font-weight:700; color:#374151;}
-.faq p{margin:8px 0 0; color:var(--muted)}
-.badge-small{
-  background:rgba(0,0,0,0.05); /* Fondo sutil */
-  padding:6px 8px; 
-  border-radius:8px; 
-  font-size:13px;
-  color: #555;
+footer {
+    max-width: var(--maxw);
+    margin: 34px auto;
+    padding: 18px;
+    color: var(--muted);
+    font-size: 14px;
 }
+
+.faq summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: #374151;
+}
+
+.faq p {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+.badge-small {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 6px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #555;
+}
+
 /* small UI niceties */
-.pill{
-  display:inline-block; 
-  padding:6px 8px; 
-  border-radius:999px; 
-  background:rgba(0,0,0,0.04); /* Fondo sutil */
-  color:var(--muted); 
-  font-size:13px;
+.pill {
+    display: inline-block;
+    padding: 6px 8px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--muted);
+    font-size: 13px;
 }
-.hero-img{border-radius:12px; width:100%; display:block}
 
-.toc{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
-.toc a{
-  color:var(--muted); 
-  text-decoration:none; 
-  font-size:14px; 
-  padding:8px 10px; 
-  border-radius:8px; 
-  background:rgba(255,255,255,0.5); /* Fondo más claro */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-  transition: all 0.2s ease;
+.hero-img {
+    border-radius: 12px;
+    width: 100%;
+    display: block;
 }
+
+.toc {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.toc a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
 .toc a:hover {
-  background:var(--accent);
-  color: #ffffff;
-  transform: translateY(-1px);
+    background: var(--accent);
+    color: #ffffff;
+    transform: translateY(-1px);
 }
 
 /* responsive typography */
-@media (max-width:520px){ h2{font-size:22px} .price{font-size:22px} ul.beneficios{grid-template-columns:1fr} .hero{gap:14px} }
+@media (max-width: 520px) {
+    h2 {
+        font-size: 22px;
+    }
+
+    .price {
+        font-size: 22px;
+    }
+
+    ul.beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        gap: 14px;
+    }
+}
+
 /* small animation */
-.fade-up{transform:translateY(6px); opacity:0; transition:all .6s cubic-bezier(.2,.9,.3,1); will-change:transform,opacity}
-.fade-up.in{transform:none; opacity:1}
+.fade-up {
+    transform: translateY(6px);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.2, 0.9, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.fade-up.in {
+    transform: none;
+    opacity: 1;
+}
+
 /* accessibility focus */
-a:focus, button:focus { 
-  outline:3px solid rgba(255,111,97,0.3); /* Color de foco basado en el acento */
-  outline-offset:3px; 
+a:focus, button:focus {
+    outline: 3px solid rgba(255, 111, 97, 0.3);
+    outline-offset: 3px;
 }
 
 /* ======================================= */
@@ -312,6 +515,7 @@ a:focus, button:focus {
     color: var(--muted);
     text-align: center;
 }
+
 /* ======================================= */
 /* ESTILOS: PRODUCTOS DE AFILIACIÓN */
 /* ======================================= */
@@ -319,26 +523,26 @@ a:focus, button:focus {
 .affiliate-section {
     margin-top: 50px;
     padding-top: 30px;
-    border-top: 1px solid rgba(0,0,0,0.1); /* Línea divisoria suave */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* La cuadrícula: 4 columnas en escritorio, 2 en tableta, 1 en móvil */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas por defecto (escritorio) */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin-top: 20px;
 }
 
-@media(max-width: 1100px) {
+@media (max-width: 1100px) {
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tableta */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
     .product-grid {
-        grid-template-columns: 1fr; /* 1 columna en móvil */
+        grid-template-columns: 1fr;
     }
 }
 
@@ -349,26 +553,27 @@ a:focus, button:focus {
     background: #ffffff;
     border-radius: 12px;
     padding: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
     overflow: hidden;
 }
+
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(255,200,162,0.4); /* Sombra con color de acento */
+    box-shadow: 0 8px 25px rgba(255, 200, 162, 0.4);
 }
 
 .product-card img {
     width: 100%;
-    height: 150px; /* Altura fija para uniformidad */
-    object-fit: contain; /* Asegura que la imagen se vea completa */
+    height: 150px;
+    object-fit: contain;
     border-radius: 8px;
     margin-bottom: 10px;
 }
 
 .product-details {
-    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    flex-grow: 1;
 }
 
 .product-details h4 {
@@ -393,11 +598,12 @@ a:focus, button:focus {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 700;
-    margin-top: auto; /* Empuja el botón hacia abajo */
+    margin-top: auto;
     transition: background 0.2s ease;
 }
+
 .product-cta:hover {
-    background: #FF9B67; /* Un tono un poco más oscuro al pasar el ratón */
+    background: #FF9B67;
 }
 
 .affiliate-disclaimer {
@@ -418,8 +624,7 @@ a:focus, button:focus {
 
 .articles-big-grid {
     display: grid;
-    /* 4 columnas en escritorio */
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-top: 20px;
 }
@@ -430,19 +635,20 @@ a:focus, button:focus {
     text-decoration: none;
     background: #ffffff;
     border-radius: 14px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Importante para que la imagen se vea bien */
-    border: 1px solid rgba(0,0,0,0.08);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
+
 .related-article-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255,200,162,0.5); /* Sombra con color de acento */
+    box-shadow: 0 10px 30px rgba(255, 200, 162, 0.5);
 }
 
 .related-article-card img {
     width: 100%;
-    height: 180px; /* Altura más grande para la imagen */
+    height: 180px;
     object-fit: cover;
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
@@ -474,7 +680,7 @@ a:focus, button:focus {
     color: var(--accent);
     font-weight: 700;
     padding-top: 10px;
-    border-top: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
     transition: color 0.2s;
 }
 
@@ -482,85 +688,97 @@ a:focus, button:focus {
     color: #FF9B67;
 }
 
-/* RESPONSIVE: Adaptación de la cuadrícula */
-
-/* Tabletas (980px y menos) */
-@media(max-width: 980px) {
-    .articles-big-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
-    }
-}
-
-/* Móviles (600px y menos) */
-@media(max-width: 600px) {
-    .articles-big-grid {
-        grid-template-columns: 1fr; /* 1 columna en móvil */
-        gap: 20px;
-    }
-    .related-article-card img {
-        height: 150px;
-    }
-}
-
-/* ------------------------------------------- */
-/* --- ESTILOS POR DEFECTO (Escritorio/Tablet) --- */
-/* ------------------------------------------- */
-
-/* Tu CSS existente */
-header{padding:28px 20px; display:flex; align-items:center; justify-content:space-between; max-width:var(--maxw); margin:0 auto;}
-/* ... (resto de tus estilos de logo y nav) ... */
-nav{display:flex; gap:14px; align-items:center} 
+/* ================================================= */
+/* === AJUSTES POR DEFECTO / ESCRITORIO (> 980px) == */
+/* ================================================= */
 
 /* Ocultar el botón de menú por defecto en escritorio */
 .menu-toggle {
-    display: none; 
+    display: none;
+}
+/* Por defecto, oculta el botón de cierre en escritorio */
+.menu-close {
+    display: none;
 }
 
-/* ------------------------------------------- */
-/* --- ESTILOS MÓVIL (Max-width: 768px) --- */
-/* ------------------------------------------- */
-@media (max-width: 768px) {
-    
-    /* 1. MOSTRAR el botón de menú y OCULTAR la frase hero-back */
-    .menu-toggle {
-        display: block; 
-        background: none;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        z-index: 1001; /* Asegura que esté sobre el nav */
-    }
-    
-    .hero-back {
-        display: none; /* Oculta el texto descriptivo para ahorrar espacio */
+/* ================================================= */
+/* === TABLETAS Y PANTALLAS GRANDES DE MÓVIL (< 980px) === */
+/* ================================================= */
+@media (max-width: 980px) {
+
+    /* 1. ANCHO COMPLETO: CORRECCIÓN DEL MAIN y HEADER */
+    header, main {
+        max-width: 100%; /* Elimina el límite de ancho para móviles */
+        padding: 15px;
+        overflow-x: hidden; /* Evita el scroll horizontal por desbordamiento */
     }
 
-    /* 2. REORGANIZAR el menú (NAV) en móvil */
+    /* 2. DISEÑO PRINCIPAL: Apilamiento (de 2 columnas a 1 columna) */
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* 3. ASIDE: CORRECCIÓN para que fluya correctamente */
+    aside {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .sticky-cta {
+        position: relative; /* DESHABILITA el sticky en móvil/tableta */
+        top: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    /* 4. CUADRÍCULAS ESPECÍFICAS: 2 columnas en tabletas */
+    .articles-big-grid,
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ================================================= */
+/* === MÓVIL ESTÁNDAR (< 768px) ===================== */
+/* ================================================= */
+@media (max-width: 768px) {
+
+    /* 1. HEADER y NAVEGACIÓN (Menú Hamburguesa) */
+    header {
+        padding: 15px 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* REORGANIZACIÓN del menú (NAV) - Estilo lateral deslizable */
     nav {
-        /* Ocultar el menú lateralmente por defecto */
         display: flex;
-        flex-direction: column; /* Apilar los enlaces */
-        position: fixed; /* Posicionamiento fijo */
+        flex-direction: column;
+        position: fixed;
         top: 0;
         right: 0;
-        height: 100vh; /* Ocupa toda la altura de la pantalla */
-        width: 70%; /* Ocupa 70% del ancho de la pantalla */
-        background-color: white; /* Color de fondo del menú desplegable */
+        height: 100vh;
+        width: 70%;
+        background-color: white;
         box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
         padding: 80px 20px 20px 20px;
         z-index: 1000;
-        
-        /* Desplazamiento fuera de la vista */
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
     }
 
-    /* 3. CLASE para MOSTRAR el menú (Activada con JavaScript) */
     nav.nav-visible {
-        transform: translateX(0); /* Mueve el menú a la vista */
+        transform: translateX(0);
     }
-    
-    /* Estilos de los enlaces dentro del menú móvil */
+
     nav a {
         padding: 15px 0;
         width: 100%;
@@ -568,77 +786,99 @@ nav{display:flex; gap:14px; align-items:center}
         font-size: 16px;
         text-align: left;
     }
-}
 
-/* --- MODIFICACIONES EN TUS ESTILOS EXISTENTES --- */
+    /* ESTILOS BOTÓN DE CIERRE (X) - Se hace visible aquí */
+    .menu-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 30px;
+        color: var(--muted);
+        cursor: pointer;
+        line-height: 1;
+        padding: 5px;
+        transition: color 0.2s ease;
+    }
 
-/* 1. Ajuste del Contenedor Principal y Header en móvil */
-@media(max-width: 768px) { 
-    /* El padding del main debe ser más ajustado en móvil */
-    main { 
-        padding: 15px; 
-    }
-    /* El header también debe tener padding reducido */
-    header {
-        padding: 15px 10px;
-    }
-}
-
-/* 2. Solución para .hero y .grid-2 (que se vean al 100% y se apilen) */
-/* Este media query (980px) ya lo tienes, pero lo ajusto para incluir el .grid-2 */
-@media(max-width: 980px){ 
-    /* .hero: Ya lo tienes. Pasa de 2 columnas a 1 columna. */
-    .hero{
-        grid-template-columns: 1fr;
-        gap: 20px; /* Reducir el espacio en móvil */
-    }
-    /* .grid-2: Pasa de 2 columnas a 1 columna (el artículo + el aside se apilan). */
-    .grid-2{
-        grid-template-columns: 1fr;
-    }
-}
-
-/* 3. Solución para el Sticky CTA (Aside) en móvil */
-/* Debe dejar de ser 'sticky' en pantallas pequeñas para que no oculte contenido. */
-@media (max-width: 980px) {
-    .sticky-cta {
-        position: relative; /* Cambia a posición normal */
-        top: 0;
-        margin-top: 20px; /* Añade un margen superior después del artículo principal */
+    .menu-close:hover {
+        color: var(--accent);
     }
 }
 
 
-/* --- CÓDIGO AÑADIDO PARA CUMPLIR CON LAS CUADRÍCULAS ESPECÍFICAS --- */
+/* ================================================= */
+/* === MÓVIL EXTREMO (< 600px) ======================= */
+/* ================================================= */
+@media (max-width: 600px) {
 
-/* 4. Solución para .articles-big-grid (Artículos relacionados: 2 cajas de 2 en 2) */
-/* El requisito es 2 cajas por fila. Ya tenías un media query para 980px, pero lo ajusto. */
-@media(max-width: 980px) {
-    .articles-big-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
-    }
-}
-
-/* 5. Solución para .affiliate-section / .product-grid (Productos de afiliación: 2 cajas de 2 en 2) */
-/* Tu CSS actual ya tiene el ajuste para 1100px. Lo ajusto ligeramente: */
-@media(max-width: 980px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas para tabletas (980px) */
-    }
-}
-
-/* 6. Ajuste Final para MÓVILES EXTREMOS (< 600px) */
-@media(max-width: 600px) {
-    /* Las cuadrículas de 2 columnas deben pasar a 1 columna completa en móvil. */
+    /* 1. CUADRÍCULAS ESPECÍFICAS: Pasan a 1 columna */
     .articles-big-grid,
     .product-grid {
-        grid-template-columns: 1fr; /* 1 columna completa en móvil */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .related-article-card img {
+        height: 150px;
     }
 }
 
-/* Opcional: Ajustar la lista de beneficios que pasa de 2 a 1 columna */
+/* ================================================= */
+/* === AJUSTES DE TIPOGRAFÍA Y PEQUEÑOS DETALLES (< 520px) === */
+/* ================================================= */
 @media (max-width: 520px) {
-    ul.beneficios{
+    h2 {
+        font-size: 22px;
+    }
+
+    .price {
+        font-size: 22px;
+    }
+
+    ul.beneficios {
         grid-template-columns: 1fr;
+    }
+
+    .hero {
+        gap: 14px;
+    }
+}
+
+/* ================================================= */
+/* === AJUSTE DE COOKIEBOT EN DISPOSITIVOS MÓVILES === */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. Contenedor principal del banner de Cookiebot */
+    #CookiebotWidget,
+    #CookiebotWidget div[data-focus-lock-disabled="false"],
+    .CookiebotWidget {
+        max-width: 90vw !important;
+        width: 90vw !important;
+        margin: 0 auto !important;
+        left: 5vw !important;
+        right: 5vw !important;
+        bottom: 10px !important;
+        top: auto !important;
+    }
+
+    /* 2. Reducir el tamaño de la fuente y el padding */
+    #CookiebotWidget * {
+        font-size: 13px !important;
+    }
+
+    /* 3. Ajustar el espaciado interno (padding) de la caja */
+    .CybotCookiebotDialog {
+        padding: 15px !important;
+    }
+
+    /* 4. Asegurar que los botones no se desborden */
+    .CybotCookiebotDialogBodyButtons {
+        flex-direction: column;
+        gap: 10px;
     }
 }

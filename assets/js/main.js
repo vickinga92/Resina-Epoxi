@@ -1,68 +1,86 @@
-// Accessibility: fill year
+// Accessibility: fill year (Asegúrate de tener un elemento con id="year" en tu HTML, ej: <footer><span id="year"></span></footer>)
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Add .in to fade-up elements once DOM is ready (simple reveal)
-document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.fade-up').forEach(function(el, i){
-        setTimeout(function(){ el.classList.add('in') }, 120 * i);
+// -------------------------------------------------------------------------
+// Lógica que requiere que el DOM esté completamente cargado (Consolidado)
+// -------------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. Efecto Fade-Up (Revelar elementos con animación)
+    document.querySelectorAll('.fade-up').forEach(function(el, i) {
+        // Retraso escalonado para un efecto visual agradable
+        setTimeout(function() { el.classList.add('in'); }, 120 * i);
     });
-});
 
-// Replace placeholder AFFILIATE_LINK text nodes (optional: ensure anchors have correct href)
-(function normalizeAffiliate(){
-    const AFF = 'AFFILIATE_LINK';
-    document.querySelectorAll('a[href="AFFILIATE_LINK"]').forEach(a=>{
-        // If still placeholder, you can set via server-side or JS. Leave it for manual replacement.
-        // a.href = 'https://go.hotmart.net/tu-enlace-de-afiliado';
-        a.setAttribute('data-affiliate-placeholder', 'true');
-    });
-})();
+    // 2. Lógica del Menú Responsive y Accesibilidad (ARIA)
+    const nav = document.getElementById('main-nav');
+    const toggle = document.querySelector('.menu-toggle');
+    const close = document.querySelector('.menu-close'); // Botón 'X'
 
-// Simple deep-link smooth scroll for in-page navigation
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', function(e){
+    // Verificar que los elementos esenciales existan
+    if (nav && toggle) {
+        const setMenuState = (isVisible) => {
+            nav.classList.toggle('nav-visible', isVisible);
+            toggle.setAttribute('aria-expanded', isVisible);
+        };
+
+        // Evento Abrir Menú (Botón Hamburguesa)
+        toggle.addEventListener('click', () => {
+            // Usa el toggle para alternar (si no hay CSS para nav-hidden, puedes usar setMenuState(true))
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            setMenuState(!isExpanded);
+        });
+
+        // Evento Cerrar Menú (Botón 'X')
+        if (close) {
+            close.addEventListener('click', () => setMenuState(false));
+        }
+
+        // Cierre automático al hacer clic en un enlace interno (Mejora UX en móvil)
+        nav.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('nav-visible')) {
+                    setMenuState(false);
+                }
+            });
+        });
+    }
+
+}); // Fin: DOMContentLoaded
+
+// -------------------------------------------------------------------------
+// Lógica de Scroll y Enlaces (No requiere DOMContentLoaded si se pone al final del <body>)
+// -------------------------------------------------------------------------
+
+// Simple deep-link smooth scroll for in-page navigation (Ajustado)
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
         const targetId = a.getAttribute('href').slice(1);
         const el = document.getElementById(targetId);
-        if(el){
+        if (el) {
             e.preventDefault();
-            // Ajuste de scroll: -80px para dejar espacio al header fijo (si existiera) o margen superior.
-            window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior:'smooth' });
+            // Ajuste de scroll: -80px para dejar espacio al header fijo
+            window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
         }
     });
 });
 
-// Optional: open affiliate links in new tab (if added)
-document.querySelectorAll('a[href^="http"]').forEach(a=>{
-    if(a.getAttribute('href').includes('hotmart') || a.getAttribute('href').includes('go.hotmart')){
-        a.setAttribute('target','_blank');
-        a.setAttribute('rel','noopener noreferrer');
+// Optional: open affiliate links in new tab (Añade rel="noopener noreferrer" por seguridad)
+document.querySelectorAll('a[href^="http"]').forEach(a => {
+    if (a.getAttribute('href').includes('hotmart') || a.getAttribute('href').includes('go.hotmart') || a.getAttribute('href').includes('amzn.to')) { // Añadido filtro para Amazon
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener noreferrer'); // Importante por seguridad y rendimiento
     }
 });
 
-// Accordion behavior (details are native but enhance keyboard)
-document.querySelectorAll('details summary').forEach(s=>{
-    s.addEventListener('keydown', function(e){
-        if(e.key === 'Enter' || e.key === ' '){
-            e.preventDefault(); s.parentElement.open = !s.parentElement.open;
+// Accordion behavior (Mejora la navegación por teclado en los <details>)
+document.querySelectorAll('details summary').forEach(s => {
+    s.addEventListener('keydown', function(e) {
+        // Permite abrir/cerrar con Enter o Espacio
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            s.parentElement.open = !s.parentElement.open;
         }
     });
 });
 
-// Tiny performance tip: defer big images and external scripts; use server-side caching and compress assets.
-
-// ----------------------------------------------------
-// CÓDIGO DEL MENÚ RESPONSIVE (AÑADIDO CORRECTAMENTE AQUÍ)
-// ----------------------------------------------------
-const nav = document.getElementById('main-nav');
-const toggle = document.querySelector('.menu-toggle');
-
-if (nav && toggle) { // Verificación añadida para evitar errores si los elementos no se encuentran
-    toggle.addEventListener('click', () => {
-        // Alterna entre la clase nav-hidden (oculto) y nav-visible (mostrado)
-        nav.classList.toggle('nav-visible'); 
-        
-        // Mejora la accesibilidad (opcional, pero recomendado)
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true' || false;
-        toggle.setAttribute('aria-expanded', !isExpanded);
-    });
-}
+// Elimina el código de normalización de afiliados si ya lo gestionaste en el HTML
