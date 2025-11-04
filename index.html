@@ -11,9 +11,20 @@
   <meta name="robots" content="index, follow" />
 
   <!-- codigo de cookies -->
-  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4d9ca9d8-824e-4322-afec-399eaf79502b" data-blockingmode="auto" type="text/javascript"></script>
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4d9ca9d8-824e-4322-afec-399eaf79502b" data-blockingmode="auto" type="text/javascript" defer></script>
   <!-- instrucciones de estilo css -->
-  <link rel="stylesheet" href="assets/css/main.css">
+  
+  <style>
+        /* Define los estilos esenciales para el header, fuentes, y el layout superior */
+        body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        .hero-section { background: #E0F7FA; padding: 20px; }
+        .main-title { color: #00838F; font-size: 2em; }
+    </style>
+  <link rel="stylesheet" href="assets/css/main.css" media="print" 
+        onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="assets/css/main.css">
+  </noscript>
 
   <meta property="og:title" content="Curso de Resina Epoxi - Aprende Mesas, Joyería y Decoración"/>
   <meta property="og:description" content="Curso práctico de resina epoxi: técnicas, recetas, moldes y ventas. Convierte tu hobby en negocio. Inscríbete hoy."/>
@@ -75,7 +86,7 @@
 </script>
 <!-- Integrar Hotjar-->
  <!-- Hotjar Tracking Code -->
-<script data-cookieconsent="statistics">
+<script data-cookieconsent="statistics" defer>
   (function(h,o,t,j,a,r){
     // ... código de Hotjar
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
