@@ -1,2 +1,0 @@
-User-agent: *
-Sitemap: https://vickinga92.github.io/Resina-Epoxi/sitemap.xml
