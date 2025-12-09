@@ -1,2 +1,4 @@
 User-agent: *
+Allow: /
+
 Sitemap: https://vickinga92.github.io/Resina-Epoxi/sitemap.xml
