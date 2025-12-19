@@ -1,82 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/</loc></url>
 
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/articulos.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/calculadora-pdf-download.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/descarga-calculadora.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/curso-resina-epoxi.html</loc></url>
 
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/index.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/articulos.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/guia-resina-epoxi-completa.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/ideas-rentables-resina-epoxi.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/como-eliminar-burbujas-resina-epoxi.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/errores-curado-resina-epoxi.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/mejor-resina-epoxi-para-joyeria-2025.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/secreto-brillo-pulido-acabado.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/seguridad-y-ventilacion-resina.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/guia-de-pigmentos-para-resina.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/mi-resina-expoxi-no-cura.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/como-hacer-mesa-de-rio-epoxi.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://vickinga92.github.io/Resina-Epoxi/Resina-Epoxi-vs-Resina-UV.html</loc>
-  <lastmod>2025-11-28T20:34:31+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/como-eliminar-burbujas-resina-epoxi.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/como-hacer-mesa-de-rio-epoxi.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/errores-curado-resina-epoxi.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/guia-de-pigmentos-para-resina.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/guia-resina-epoxi-completa.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/ideas-rentables-resina-epoxi.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/mejor-resina-epoxi-para-joyeria-2025.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/mi-resina-epoxi-no-cura.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/resina-epoxi-vs-resina-uv.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/secreto-brillo-pulido-acabado.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/seguridad-y-ventilacion-resina.html</loc></url>
 
-
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/politica-de-cookies.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/politica-privacidad.html</loc></url>
+  <url><loc>https://vickinga92.github.io/Resina-Epoxi/terminos.html</loc></url>
 </urlset>
